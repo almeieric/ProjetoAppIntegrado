@@ -1,0 +1,13 @@
+.apaga {
+  height: 0px;
+ 
+  transform: scale(0);
+  transition: 0.3s ease;
+}
+
+.btn:hover .apaga {
+  height: auto;
+  width: auto;
+  
+  transform: scale(1);
+}
