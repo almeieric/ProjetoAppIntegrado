@@ -33,6 +33,7 @@ export class EditComponent implements OnInit {
     } else {
       this.contatoService.insert(this.contato);
     }
+    this.key = '';
     this.contato = new Contato()
 
   }
