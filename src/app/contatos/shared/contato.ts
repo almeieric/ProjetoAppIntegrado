@@ -1,4 +1,4 @@
 export class Contato {
-  nome: string;
-  telefone: string;
+  nome: string = '';
+  telefone: string = '';
 }

@@ -10,6 +10,9 @@ import { ContatoDataService } from '../shared/contato-data.service'
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  searchText: any;
+  show: boolean = false;
+  contato: Contato;
   contatos: Observable<any>;
   constructor(private contatoService: ContatoService, private contatoDataService: ContatoDataService) {
 
@@ -24,7 +27,8 @@ this.contatoService.delete(key);
 
   edit(contato: Contato, key: string) {
     this.contatoDataService.changeContato(contato, key);
+    this.contato = new Contato();
 
   }
-
+  
 }

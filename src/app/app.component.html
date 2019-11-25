@@ -1,11 +1,24 @@
-<div class="container mt-5 mb-5">
-  <ul class="nav nav-pills nav-fill">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/cadastro" routerLinkActive="active">Cadastro</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link " routerLink="/lista" routerLinkActive="active">Listagem</a>
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
-</div>
+<header>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+
+    <h1 class="navbar-brand">{{title}}</h1>
+
+  </nav>
+
+</header>
+
+
+<ul  class="nav navbar-light nav-fills" style="background-color: #e3f2fd;">
+  <li class="m-2 ml-5 nav-item">
+    <a class="navbar-brand" routerLink="/cadastro" routerLinkActive="active">Cadastro</a>
+  </li>
+  <li class="m-2 nav-item">
+    <a class="navbar-brand " routerLink="/lista" routerLinkActive="active">Listagem</a>
+  </li>
+</ul>
+
+
+
+
+
+<router-outlet></router-outlet>

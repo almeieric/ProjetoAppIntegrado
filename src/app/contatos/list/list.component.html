@@ -1,25 +1,34 @@
-<link rel="stylesheet" href="">
-<div class="card mt-2" *ngFor="let contato of contatos | async">
-  <div class="card-body">
-    <h5 class="card-title">
-      {{contato.nome}}
-    </h5>
-    <p class="card-text">
-      {{contato.telefone}}
-    </p>
+<div class="col">
+  <input type="text" class="form-control " name="pesquisa" placeholder="Pesquisa" [(ngModel)]="searchText" autocomplete="off">
+  <div class="card mt-2" *ngFor="let contato of contatos | async | filter:searchText ">
+    <div class="card-body">
+      <h5 class="card-title">
+        Nome:
+        {{contato.nome}}
+      </h5>
+      <p class="card-text">
+        Telefone:
+        {{contato.telefone}}
+      </p>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-success" (click)="edit(contato, contato.key)" (click)="show = !show">
+        <i class="material-icons">edit</i>
+        <div class="apaga">
+          <p>Editar</p>
+        </div>
+      </button>
+      <button class="btn btn-danger ml-2" (click)="delete(contato.key)">
+        <i class="material-icons">cancel</i>
+        <div class="apaga">
+          <p>Excluir</p>
+        </div>
+      </button>
+      
+    </div>
+    
   </div>
-  <div class="card-footer">
-    <button class="btn btn-success" (click)="edit(contato, contato.key)">
-      <i class="material-icons">edit</i>
-      <div class="apaga">
-        <p>Editar</p>
-      </div>
-    </button>
-    <button class="btn btn-danger ml-2" (click)="delete(contato.key)">
-      <i class="material-icons">cancel</i>
-      <div class="apaga">
-        <p>Excluir</p>
-      </div>
-    </button>
-  </div>
+</div>
+<div *ngIf="show">
+  <app-edit></app-edit>
 </div>
